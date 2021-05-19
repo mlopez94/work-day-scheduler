@@ -6,13 +6,16 @@ $(".time-block").each(function () {
   var hrDiv = parseInt($(this).attr("id").split(".")[1]);
 
   if (hrDiv < currentTime) {
-    $(this).find("input").addClass("future");
+    $(this).find("input")
+    .addClass("future");
 
   } else if (hrDiv == currentTime) {
-      $(this).find("input").addClass("present");
+      $(this).find("input")
+      .addClass("present");
 
   } else (hrDiv > currentTime) 
-      $(this).find("input").addClass("past");
+      $(this).find("input")
+      .addClass("past");
   
 
 
