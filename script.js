@@ -17,12 +17,19 @@ $(".time-block").each(function () {
   } else (hrDiv > currentTime) 
       $(this).find("input")
       .addClass("past");
+
+      var timeCont = $(this);
+
+      var timeCont2 = localStorage.getItem(timeContain);
+
+      var timeCont3 = $
   
 
 
 })
 
-$("saveBtn").click(function() {
+$(".saveBtn").click(function() {
+  alert("this prompts a screen!");
 
 })
 
