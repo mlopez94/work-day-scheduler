@@ -11,15 +11,9 @@ $(".time-block").each(function () {
   } else if (hrDiv == currentTime) {
       $(this).find("input").addClass("present");
 
-  } else (hrDiv > currentTime) {
+  } else (hrDiv > currentTime) 
       $(this).find("input").addClass("past");
-  }
-
-//   var tmID = 
-
-//   va
-
-
+  
 
 
 });
@@ -27,3 +21,5 @@ $(".time-block").each(function () {
 $("saveBtn").click(function() {
 
 })
+
+
