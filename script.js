@@ -4,6 +4,7 @@ var currentTime = parseInt(moment().format("HH")); // turning hour into an integ
 
 $(".time-block").each(function () {
   var hrDiv = parseInt($(this).attr("id").split(".")[1]);
+  
 
   if (hrDiv < currentTime) {
     $(this).find("input")
@@ -19,7 +20,7 @@ $(".time-block").each(function () {
   
 
 
-});
+})
 
 $("saveBtn").click(function() {
 
