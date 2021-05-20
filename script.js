@@ -1,36 +1,73 @@
 $("#currentDay").text(moment().format("[Today's Date is: ] dddd, MMM Do")); //easier way to write time in JQuery using moment
 
-var currentTime = parseInt(moment().format("HH")); // turning hour into an integer to test number
+//var currentTime = parseInt(moment().format("HH")); // turning hour into an integer to test number
 
-$(".time-block").each(function () {
-  var hrDiv = parseInt($(this).attr("id").split(".")[1]);
+
+
+
+    // changing colors of input fields
+
+   
+      var thisHour = moment().format("HH");
+       // var thisHour = parseInt("14");
+      //  console.log(thisHour);
+
+      $(".time-block").each(function () {
+          var txtInput = parseInt($(this).attr("id").split("-")[1]);
+
+          //
+          if (thisHour < txtInput) {
+              $(this).find("input").addClass("future");
+          }
+          else if (thisHour == txtInput) {
+              $(this).find("input").addClass("present");
+          }
+          else{
+              $(this).find("input").addClass("past");
+          }
+      });
+   
+  
   
 
-  if (hrDiv < currentTime) {
-    $(this).find("input")
-    .addClass("future");
+// $(".time-block").each(function () {
+//   var hrDiv = parseInt($(this).attr("id").split(".")[1]);
+  
 
-  } else if (hrDiv == currentTime) {
-      $(this).find("input")
-      .addClass("present");
+//   if (hrDiv < currentTime) {
+//     $(this).find("input")
+//     .addClass("future");
 
-  } else (hrDiv > currentTime) 
-      $(this).find("input")
-      .addClass("past");
+//   } else if (hrDiv == currentTime) {
+//       $(this).find("input")
+//       .addClass("present");
 
-      var timeCont = $(this);
+//   } else (hrDiv > currentTime) 
+//       $(this).find("input")
+//       .addClass("past");
 
-      var timeCont2 = localStorage.getItem(timeContain);
-
-      var timeCont3 = $
+//       var hrID = $(this).attr("id"
+      
+//       )
   
 
 
-})
+// })
 
-$(".saveBtn").click(function() {
-  alert("this prompts a screen!");
 
-})
+// Click event function
+// $(Document).ready(function() {
+//     $(".saveBtn").on("click", function() {
+        
+
+//         var text = $(this).siblings("description").val()
+//         var time = $(this).parent().attr("id")
+
+//         localStorage.setItem(time, text);
+
+    
+//     });
+
+// });  
 
 
