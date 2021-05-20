@@ -1,17 +1,14 @@
 $("#currentDay").text(moment().format("[Today's Date is: ] dddd, MMM Do")); //easier way to write time in JQuery using moment
 
-//var currentTime = parseInt(moment().format("HH")); // turning hour into an integer to test number
-
-// changing colors of input fields
-
+// variable for containing current time
 var thisHour = moment().format("HH");
 // var thisHour = parseInt("14");
-//  console.log(thisHour);
+
 
 $(".time-block").each(function () {
   var txtInput = parseInt($(this).attr("id").split("-")[1]);
 
-  //
+  // Changing colors of input fields
   if (thisHour < txtInput) {
     $(this).find("input").addClass("future");
   } else if (thisHour == txtInput) {
@@ -21,6 +18,7 @@ $(".time-block").each(function () {
   }
 });
 
+// OnClick Function
 $(".saveBtn").on("click", function () {
   var text = $(this).siblings(".textarea").val();
   var time = $(this).parent().attr("id");
@@ -28,6 +26,7 @@ $(".saveBtn").on("click", function () {
   localStorage.setItem(time, text);
 });
 
+// Local storage for text content in divs
 var val9 = localStorage.getItem("hr-9")
 $("#hr-9").find("input").val(val9);
 
